@@ -1,5 +1,7 @@
 # Node + Express App to generate and serve task jobs completed and notified by Email
-
+<p>
+  This app originally was coded as a fetcher/formatter for job emails, I changed it to generete dummy data for personal projects
+</p>
 ### data format
 ```
 { 
