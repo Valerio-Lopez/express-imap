@@ -7,7 +7,7 @@
     "year":{
       "number_of_the_month_starting_by_0":{
         "day_of_the_month":{
-          "Name_of_the_Job": Date_Object
+          "Name_of_the_Job": Date_Object,
            }
         }
      }
