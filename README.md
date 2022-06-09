@@ -1,4 +1,4 @@
-# Node + Express App to generate and serve task job completed and notified by Email
+# Node + Express App to generate and serve task jobs completed and notified by Email
 
 ### data format
 ```
