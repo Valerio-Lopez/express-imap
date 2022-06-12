@@ -1,14 +1,20 @@
-# Node + Express App to generate and serve task job completed and notified by Email
+# Node + Express App to generate and serve task jobs completed and notified by Email
+<p>
+  This app originally was coded as a fetcher/formatter for job emails, I changed it to generete dummy data for personal projects
+</p>
+
 
 ### data format
-
-{ "emal":{
-"year":{
-"number of the month starting by 0":{
-"day of the month":{
-"Name of the Job": Date Object
+```
+{ 
+  "emal":{
+    "year":{
+      "number_of_the_month_starting_by_0":{
+        "day_of_the_month":{
+          "Name_of_the_Job": Date_Object,
+           }
+        }
+     }
+   }
 }
-}
-}
-}
-}
+```
