@@ -19,7 +19,8 @@ const monthArray = [
 const response = {}
 
 const search = (param, entries) => {
-  const json = generateData(entries)
+  let json = {}
+  json = generateData(entries, param.year, param.month)
   let month = monthArray.findIndex(
     (element) => element.toLowerCase() === param.month.toLowerCase()
   )
@@ -28,7 +29,7 @@ const search = (param, entries) => {
   }
 
   const t = new Date(param.year, month, 1)
-
+  let response = {}
   Object.keys(json).forEach((sender) => {
     if (json[sender][t.getFullYear()]) {
       if (json[sender][t.getFullYear()][t.getMonth()]) {
