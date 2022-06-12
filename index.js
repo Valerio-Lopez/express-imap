@@ -17,7 +17,23 @@ app
   .get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "/index.html"))
   })
-  .all("/:year/:month", (req, res) => {
+  .get("/resumen/:number?", (req, res) => {
+    let entries = 50
+    console.log(req.params.number)
+    if (req.params.number) {
+      entries = parseInt(req.params.number)
+    }
+    res.send(resumen(entries))
+  })
+  .get("/data/:number?", (req, res) => {
+    let entries = 50
+    console.log(req.params.number)
+    if (req.params.number) {
+      entries = parseInt(req.params.number)
+    }
+    res.json(generateData(entriesda))
+  })
+  .get("/:year/:month", (req, res) => {
     let entries = {}
     if (
       req.params.year < 1900 ||
@@ -36,15 +52,10 @@ app
       res.json(entries)
     }
   })
-  .get("/resumen", (req, res) => {
-    res.send(resumen(50))
-  })
-  .get("/data", (req, res) => {
-    res.json(generateData(10))
-  })
+
   .get("*", (req, res) => {
     res.status(404).send(`Page not Found`)
   })
   .listen(port, () => {
-    console.log(`listening port localhost:${port}`)
+    console.log(`Mynhos server listening port localhost:${port}`)
   })
