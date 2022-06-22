@@ -1,6 +1,10 @@
 import fs from "fs"
 import { generateData } from "./generateData.js"
 
+/**
+ * * App module to format generated data by generateData.js
+ */
+
 let senders
 const monthArr = [
   "year",
@@ -18,6 +22,12 @@ const monthArr = [
   "Dic",
   "total",
 ]
+
+/**
+ *
+ * @param  entries number of generated entries
+ * @returns formatted entries to show number of emails by month and year
+ */
 
 const resumen = (entries) => {
   // if (fs.existsSync("data.json")) {

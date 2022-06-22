@@ -1,3 +1,7 @@
+/**
+ * Module to format entries email
+ */
+
 import { generateData } from "./generateData.js"
 
 //import json from "./data.json" assert { type: "json" }
@@ -16,7 +20,12 @@ const monthArray = [
   "December",
 ]
 
-const response = {}
+/**
+ *
+ * @param {solicited year and month} param
+ * @param {number of entries} entries
+ * @returns {formatted entries}
+ */
 
 const search = (param, entries) => {
   let json = {}

@@ -1,9 +1,9 @@
 import express from "express"
 import cors from "cors"
-import search from "./search.js"
+import search from "./modules/search.js"
 //import json from "./data.json" assert { type: "json" }
-import resumen from "./resumen.js"
-import { generateData } from "./generateData.js"
+import resumen from "./modules/resumen.js"
+import { generateData } from "./modules/generateData.js"
 import path, { dirname } from "path"
 import { fileURLToPath } from "url"
 
@@ -17,9 +17,12 @@ app
   .get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "/index.html"))
   })
+  .get("/ytd", (req, res) => {
+    res.send(req.query.param)
+  })
   .get("/resumen/:number?", (req, res) => {
     let entries = 50
-    console.log(req.params.number)
+    //console.log(req.params.number)
     if (req.params.number) {
       entries = parseInt(req.params.number)
     }
@@ -31,7 +34,7 @@ app
     if (req.params.number) {
       entries = parseInt(req.params.number)
     }
-    res.json(generateData(entriesda))
+    res.json(generateData(entries))
   })
   .get("/:year/:month", (req, res) => {
     let entries = {}
@@ -52,7 +55,6 @@ app
       res.json(entries)
     }
   })
-
   .get("*", (req, res) => {
     res.status(404).send(`Page not Found`)
   })
